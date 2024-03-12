@@ -19,32 +19,28 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            // Example JavaScript for WebSocket connections
-
             // Connect to WebSocket for the first column
             const ws1 = new WebSocket('ws://localhost:8000/ws1');
             ws1.onmessage = function(event) {
                 const message = event.data;
-                document.getElementById('column1').innerHTML += `${message}<br>`;
+                document.getElementById('column1').innerHTML += `${message}`;
             };
 
             // Connect to another WebSocket for the second column
             const ws2 = new WebSocket('ws://localhost:8000/ws2');
             ws2.onmessage = function(event) {
                 const message = event.data;
-                document.getElementById('column2').innerHTML += `${message}<br>`;
+                document.getElementById('column2').innerHTML += `${message}`;
             };
 
-            // You can adjust this to connect to other WebSockets or endpoints
-            // and update the respective column accordingly.
         });
     </script>
 </head>
 <body>
     <h1>Real-Time Streaming API Demo</h1>
     <div class="container">
-        <div id="column1" class="column">Messages from Stream 1 will appear here...</div>
-        <div id="column2" class="column">Messages from Stream 2 will appear here...</div>
+        <div id="column1" class="column"></div>
+        <div id="column2" class="column"></div>
     </div>
 </body>
 </html>
