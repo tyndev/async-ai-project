@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Streaming API Demo</title>
+    <title>Concurrent LLM Streaming Demo</title>
     <style>
         /* Basic CSS for the two-column layout */
         .container {
@@ -12,7 +12,7 @@
             flex: 1;
             margin: 10px;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 3px solid #ccc;
             overflow-y: auto;
             height: 400px; /* Adjust height as needed */
         }
@@ -37,10 +37,11 @@
     </script>
 </head>
 <body>
-    <h1>Real-Time Streaming API Demo</h1>
-    <div class="container">
-        <div id="column1" class="column"></div>
-        <div id="column2" class="column"></div>
+    <h1>Concurrent AI Responses & LLM Streaming</h1>
+    <div class="container"> 
+        <div id="column1" class="column"><h2>Response 1</h2></div>
+        <div id="column2" class="column"><h2>Response 2</h2></div>
     </div>
 </body>
 </html>
+
