@@ -11,7 +11,6 @@ from fastapi.responses import FileResponse
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-
 app = FastAPI()
 
 # Mount the static directory to serve static files
@@ -20,8 +19,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def get_main():
     return FileResponse('static/index.html')
-
-# TODO ws1 and ws2 are not concurrent... fix this
 
 @app.websocket("/ws1")
 async def websocket_endpoint_1(websocket: WebSocket):
